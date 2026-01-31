@@ -8,7 +8,7 @@ import '../core/widgets/navbar.dart';
 import '../core/widgets/notification_toast.dart';
 import '../core/widgets/error_widget.dart';
 import '../core/widgets/app_layout.dart';
-import '../core/widgets/notification_panel.dart';
+// import '../core/widgets/notification_panel.dart'; // Removed unused import
 import '../core/widgets/wood_button.dart';
 import '../core/widgets/product_card.dart' show ProductData;
 import '../core/widgets/package_card.dart' show PackageData;
@@ -1122,7 +1122,8 @@ class _AppLayoutWrapperState extends ConsumerState<AppLayoutWrapper> {
                 child: Column(
                   children: [
                     // Notification Panel at the very top
-                    const NotificationPanel(),
+                    // Notification Panel removed to avoid duplicates (using NotificationToast instead)
+                    // const NotificationPanel(),
 
                     // Navbar below the Notification Panel
                     if (widget.showNavbar)

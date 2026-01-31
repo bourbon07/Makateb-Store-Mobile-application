@@ -5,7 +5,7 @@ import '../services/http_config_service.dart';
 import 'error_widget.dart';
 import 'navbar.dart';
 import 'notification_toast.dart';
-import 'notification_panel.dart';
+// import 'notification_panel.dart'; // Removed unused import
 import 'page_layout.dart';
 
 /// AppLayout - Root layout widget
@@ -154,7 +154,8 @@ class _AppLayoutState extends State<AppLayout> {
           child: Column(
             children: [
               // Notification Panel at the very top
-              const NotificationPanel(),
+              // Notification Panel removed to avoid duplicates (using NotificationToast instead)
+              // const NotificationPanel(),
 
               // Navbar below the Notification Panel
               if (_showNavbar) const Navbar(),

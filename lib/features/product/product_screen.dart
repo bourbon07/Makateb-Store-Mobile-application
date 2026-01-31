@@ -276,34 +276,24 @@ class _ProductScreenState extends ConsumerState<ProductScreen> {
           _uploadingComment = false;
         });
 
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              _isArabic
-                  ? 'تم إرسال التقييم بنجاح'
-                  : 'Review submitted successfully',
-            ),
-            backgroundColor: Colors.green,
-          ),
+        final l10n = AppLocalizations.of(context);
+        NotificationToastService.instance.showSuccess(
+          l10n.translate('review_submitted_successfully'),
         );
       }
     } catch (e) {
       debugPrint('Error submitting review: $e');
       if (mounted) {
         setState(() => _uploadingComment = false);
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              _isArabic ? 'فشل إرسال التقييم' : 'Failed to submit review',
-            ),
-            backgroundColor: Colors.red,
-          ),
+        final l10n = AppLocalizations.of(context);
+        NotificationToastService.instance.showError(
+          l10n.translate('failed_to_submit_review'),
         );
       }
     }
   }
 
-  bool get _isArabic => ref.watch(currentLanguageProvider) == 'ar';
+  // bool get _isArabic => ref.watch(currentLanguageProvider) == 'ar';
 
   @override
   Widget build(BuildContext context) {

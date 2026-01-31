@@ -563,5 +563,6 @@
   "item_removed_from_cart": "Item removed from cart",
   "failed_to_remove_item": "Failed to remove item",
   "failed_to_load_products": "Failed to load products",
-  "error_picking_image": "Error picking image"
+  "error_picking_image": "Error picking image",
+  "wishlist_updated": "Wishlist updated"
 }
